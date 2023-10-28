@@ -55,6 +55,13 @@ void arrange(int* arra, int* arr_copy,  int len){
     merge_sort(arra, arr_copy, len + 1);
 }
 
+void print(int* arr, int len, std::string text){
+    std::cout << text << " ";
+    for(int i = 0; i < len; i++){
+        std::cout << arr[i] << " ";
+    }
+}
+
 
 int main() {
     int arra[] = {24, 66, 20, 79, 30, 16, 19, 62, 94, 59, 0, 7, 59, 90, 84, 60, 95, 62};
@@ -63,10 +70,9 @@ int main() {
 
     int len = sizeof(arra) / sizeof(arra[0]);
     int arr_copy[len];
-    std::cout << "Исходный массив: ";
-    for(int i = 0; i < len; i++){
-        std::cout << arra[i] << " ";
-    }
+
+    print(arra, len, "Исходный массив: ");
+
 
     arrange(arra,arr_copy,len - 1);//9 ,5
    // for(int i = 0; i < (len / 2);i++) {
@@ -76,11 +82,8 @@ int main() {
 //
     //merge_sort(arra, arr_copy, len);
 
+    print(arra, len, "\nОтсортированный массив: ");
 
-    std::cout << "\nОтсортированный массив: ";
-    for(int i = 0; i < len; i++){
-        std::cout << arr_copy[i] << " ";
-    }
 
     return 0;
 }
